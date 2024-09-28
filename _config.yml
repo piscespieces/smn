@@ -1,5 +1,5 @@
-url: ''
-baseurl: ''
+url: 'https://piscespieces.github.io'
+baseurl: 'smn'
 title: '$SMN'
 
 plugins:
