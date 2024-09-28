@@ -19,6 +19,8 @@ jobs:
         with:
           node-version: '22'
       - run: npm install
+      - name: Build CSS
+        run: npm run build:css # <------ Build Tailwind & CSS through your PostCSS setup
       - name: Build site
         uses: limjh16/jekyll-action-ts@v2
         with:
