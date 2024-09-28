@@ -13,3 +13,5 @@ exclude:
   - postcss.config.js
   - tailwind.config.js
   - yarn.lock
+  - assets/css/main.css  # Exclude the raw unprocessed CSS file
+
