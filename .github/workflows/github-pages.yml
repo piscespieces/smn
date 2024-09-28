@@ -29,29 +29,13 @@ jobs:
       - name: Check output before deployment
         run: ls -la _site/assets/css/
       
-      # - name: Build CSS
-      #   run: JEKYLL_ENV=production yarn build:css --verbose
+      - name: Build CSS
+        run: JEKYLL_ENV=production yarn build:css --verbose
 
       - name: Build site
         uses: limjh16/jekyll-action-ts@v2
         with:
           enable_cache: true
-
-      # Clean deployment on gh-pages
-      - name: Set Git Config for GitHub Pages
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-      - name: Clean gh-pages branch before deploy
-        run: |
-          git clone --depth=1 --branch=gh-pages https://github.com/piscespieces/smn.git gh-pages-dir
-          rm -rf gh-pages-dir/*
-          mv _site/* gh-pages-dir/
-          cd gh-pages-dir
-          git add --all
-          git commit -m "Clean deploy"
-          git push origin gh-pages
           
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
