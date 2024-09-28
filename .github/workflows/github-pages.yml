@@ -36,6 +36,17 @@ jobs:
         uses: limjh16/jekyll-action-ts@v2
         with:
           enable_cache: true
+
+      - name: Clean gh-pages branch before deploy
+        run: |
+          git clone --depth=1 --branch=gh-pages https://github.com/piscespieces/smn.git gh-pages-dir
+          rm -rf gh-pages-dir/*
+          mv _site/* gh-pages-dir/
+          cd gh-pages-dir
+          git add --all
+          git commit -m "Clean deploy"
+          git push origin gh-pages
+          
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
