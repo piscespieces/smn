@@ -22,7 +22,7 @@ jobs:
       - name: Check PostCSS Version
         run: yarn postcss --version
       - name: Check TailwindCSS Version
-        run: yarn tailwindcss --version
+        run: yarn list tailwindcss
       - name: Build CSS
         run: JEKYLL_ENV=production yarn build:css --verbose
       - name: Build site
