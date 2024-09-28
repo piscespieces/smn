@@ -18,9 +18,9 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '22'
-      - run: npm install
+      - run: yarn install
       - name: Build CSS
-        run: JEKYLL_ENV=production npm run build:css
+        run: JEKYLL_ENV=production yarn build:css
       - name: Build site
         uses: limjh16/jekyll-action-ts@v2
         with:
