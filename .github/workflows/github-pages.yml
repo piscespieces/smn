@@ -19,10 +19,10 @@ jobs:
         with:
           node-version: '18'
       - run: yarn install
+      - name: Reinstall PostCSS CLI
+        run: yarn add postcss-cli --dev
       - name: Check PostCSS Version
         run: yarn postcss --version
-      - name: Check TailwindCSS Version
-        run: yarn list tailwindcss
       - name: Build CSS
         run: JEKYLL_ENV=production yarn build:css --verbose
       - name: Build site
