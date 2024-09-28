@@ -17,10 +17,10 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
-          node-version: '22'
+          node-version: '18'
       - run: yarn install
       - name: Build CSS
-        run: JEKYLL_ENV=production yarn build:css
+        run: JEKYLL_ENV=production yarn build:css --verbose
       - name: Build site
         uses: limjh16/jekyll-action-ts@v2
         with:
