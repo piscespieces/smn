@@ -19,12 +19,19 @@ jobs:
         with:
           node-version: '18'
       - run: yarn install
-      - name: Reinstall PostCSS CLI
-        run: yarn add postcss-cli --dev
-      - name: Check PostCSS Version
-        run: yarn postcss --version
-      - name: Build CSS
-        run: JEKYLL_ENV=production yarn build:css --verbose
+
+      - name: Build CSS using PostCSS directly (npx)
+        run: npx postcss assets/css/main.css -o _site/assets/css/main.css --verbose
+
+      - name: Inspect built CSS
+        run: cat _site/assets/css/main.css || echo "CSS file not found or empty"
+
+      - name: Check output before deployment
+        run: ls -la _site/assets/css/
+      
+      # - name: Build CSS
+      #   run: JEKYLL_ENV=production yarn build:css --verbose
+
       - name: Build site
         uses: limjh16/jekyll-action-ts@v2
         with:
