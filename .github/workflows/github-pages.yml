@@ -19,6 +19,10 @@ jobs:
         with:
           node-version: '18'
       - run: yarn install
+      - name: Check PostCSS Version
+        run: yarn postcss --version
+      - name: Check TailwindCSS Version
+        run: yarn tailwindcss --version
       - name: Build CSS
         run: JEKYLL_ENV=production yarn build:css --verbose
       - name: Build site
