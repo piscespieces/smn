@@ -37,6 +37,12 @@ jobs:
         with:
           enable_cache: true
 
+      # Clean deployment on gh-pages
+      - name: Set Git Config for GitHub Pages
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+
       - name: Clean gh-pages branch before deploy
         run: |
           git clone --depth=1 --branch=gh-pages https://github.com/piscespieces/smn.git gh-pages-dir
