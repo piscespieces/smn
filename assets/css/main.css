@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Dela+Gothic+One&display=swap');
+
+@view-transition {
+  navigation: auto;
+}
+
+body {
+  font-family: "Bodoni Moda SC", serif;
+}
