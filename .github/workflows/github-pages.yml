@@ -20,9 +20,6 @@ jobs:
           node-version: '18'
       - run: yarn install
 
-      - name: Build CSS using PostCSS directly (npx)
-        run: npx postcss assets/css/main.css -o _site/assets/css/main.css --verbose
-      
       - name: Build CSS
         run: JEKYLL_ENV=production yarn build:css --verbose
 
