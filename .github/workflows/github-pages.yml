@@ -22,20 +22,14 @@ jobs:
 
       - name: Build CSS using PostCSS directly (npx)
         run: npx postcss assets/css/main.css -o _site/assets/css/main.css --verbose
-
-      - name: Inspect built CSS
-        run: cat _site/assets/css/main.css || echo "CSS file not found or empty"
-
-      - name: Check output before deployment
-        run: ls -la _site/assets/css/
       
       - name: Build CSS
         run: JEKYLL_ENV=production yarn build:css --verbose
 
       - name: Build site
         uses: limjh16/jekyll-action-ts@v2
-        # with:
-        #   enable_cache: true
+        with:
+          enable_cache: true
           
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
