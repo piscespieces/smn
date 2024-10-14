@@ -4,11 +4,26 @@ title: "$SMN"
 ---
 <!--<script src="{{ '/assets/js/typography.js' | relative_url }}"></script>-->
 <script src="{{ site.baseurl }}/assets/js/sketch.js"></script>
-<div class="h-screen flex flex-col justify-center items-center py-24 max-w-xl mx-auto text-center">
-  <h1 class="font-audiowide text-8xl font-bold" data-newvalue="FUCK" data-oldvalue="$SMN">
+<div id="lightning"></div>
+<div class="h-screen flex flex-col justify-center items-center max-w-xl mx-auto text-center">
+  <h1 class="font-audiowide text-4xl md:text-8xl font-bold" data-newvalue="FUCK" data-oldvalue="$SMN">
     $SUBSTANCE
   </h1>
   <div>
-    <a class="underline font-inter text-[#ff4]" href="{{ site.baseurl }}/home">Continue!</a>
+    <a id="continue" class="underline font-inter text-[#ff4]" href="{{ site.baseurl }}/home">Continue!</a>
   </div>
 </div>
+
+<script>
+  document.getElementById('continue').addEventListener('click', function(event) {
+    event.preventDefault();
+
+    const lightning = document.getElementById('lightning');
+    lightning.style.opacity = '0.5'; // Make sure it's visible
+    lightning.classList.add('lightning'); // Add the animation class if needed
+
+    setTimeout(function() {
+      window.location.href = "{{ site.baseurl }}/home"; // Navigate after 3 seconds (adjust timing as needed)
+    }, 500); // Adjust this delay to match your animation timing
+  })
+</script>

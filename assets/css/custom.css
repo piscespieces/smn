@@ -1,0 +1,38 @@
+.lightning {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url("../images/lightning_bolt.png");
+    background-size: cover;
+    opacity: 0;
+    animation: lightning 2s infinite;
+}
+
+@keyframes lightning {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 0;
+    }
+    11% {
+        opacity: 0.5;
+    }
+    25% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 0;
+    }
+    31% {
+        opacity: 0.5;
+    }
+    35% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
